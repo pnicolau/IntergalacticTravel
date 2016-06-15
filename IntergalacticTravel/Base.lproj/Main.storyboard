@@ -17,14 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkI-s2-N6D">
-                                <rect key="frame" x="264" y="285" width="72" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="WWW-Sx-mlc"/>
-                                    <constraint firstAttribute="height" constant="30" id="cEO-iV-U27"/>
-                                </constraints>
-                                <state key="normal" title="Red Dwarf"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8x-Z7-f9P">
                                 <rect key="frame" x="256" y="174" width="89" height="30"/>
                                 <constraints>
@@ -32,6 +24,20 @@
                                     <constraint firstAttribute="width" constant="89" id="R8e-Qy-2Jb"/>
                                 </constraints>
                                 <state key="normal" title="Blue Star"/>
+                                <connections>
+                                    <segue destination="aiR-QM-NyU" kind="show" identifier="BlueStarSegue" id="wrU-4A-yYQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkI-s2-N6D">
+                                <rect key="frame" x="264" y="285" width="72" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="WWW-Sx-mlc"/>
+                                    <constraint firstAttribute="height" constant="30" id="cEO-iV-U27"/>
+                                </constraints>
+                                <state key="normal" title="Red Dwarf"/>
+                                <connections>
+                                    <segue destination="aiR-QM-NyU" kind="show" identifier="RedDwarfSegue" id="Gnj-QQ-y9v"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -47,6 +53,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1117" y="429"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="xLT-th-RLW">
+            <objects>
+                <viewController id="aiR-QM-NyU" customClass="ImageViewController" customModule="IntergalacticTravel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nng-fr-A9Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="4HS-oE-6I4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Msl-u5-LTF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7X1-Vz-gMs">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="bzH-l3-KKr"/>
+                                    <constraint firstAttribute="height" constant="300" id="hmi-sk-hvL"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7X1-Vz-gMs" firstAttribute="centerY" secondItem="Msl-u5-LTF" secondAttribute="centerY" id="QJL-Lh-LUI"/>
+                            <constraint firstItem="7X1-Vz-gMs" firstAttribute="centerX" secondItem="Msl-u5-LTF" secondAttribute="centerX" id="q8Z-ol-IfE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="7X1-Vz-gMs" id="xYs-jY-EeK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TnE-QJ-RaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1803" y="429"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sp1-R6-n0T">
@@ -67,4 +107,7 @@
             <point key="canvasLocation" x="379" y="429"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wrU-4A-yYQ"/>
+    </inferredMetricsTieBreakers>
 </document>
